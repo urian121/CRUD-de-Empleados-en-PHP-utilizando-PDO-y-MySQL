@@ -1,0 +1,14 @@
+function obtenerTotalEmpleados($conexion)
+{
+    $sql = "SELECT COUNT(*) as total FROM tbl_empleados";
+    $resultado = $conexion->query($sql);
+    if (!$resultado) {
+        return 0;
+    }
+    $fila = $resultado->fetch_assoc();
+    return $fila['total'];
+}
+
+// Llamada a la función para obtener el total de empleados
+$totalEmpleados = obtenerTotalEmpleados($conexion);
+echo "Total de empleados: " . $totalEmpleados;

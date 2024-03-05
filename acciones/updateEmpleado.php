@@ -39,7 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $sql .= " WHERE id='$id'";
-    print_r($sql);
 
     if ($conexion->query($sql) === TRUE) {
         header("location:../");

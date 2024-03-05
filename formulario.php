@@ -7,8 +7,6 @@ if (isset($datoEmpleadoEdit['id'])) { ?>
     <?php if (isset($datoEmpleadoEdit['id'])) { ?>
         <input type="hidden" name="id" value="<?php echo $datoEmpleadoEdit['id']; ?>" />
     <?php } ?>
-
-    <input type="hidden" name="id" value="<?php echo isset($datoEmpleadoEdit['id']) ? $datoEmpleadoEdit['id'] : ''; ?>" />
     <div class="mb-3">
         <label class="form-label">Nombre</label>
         <input type="text" name="nombre" class="form-control" value="<?php echo isset($datoEmpleadoEdit['nombre']) ? $datoEmpleadoEdit['nombre'] : ''; ?>" />

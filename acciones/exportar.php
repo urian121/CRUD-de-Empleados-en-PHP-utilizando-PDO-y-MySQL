@@ -1,16 +1,14 @@
 <?php
-// Incluir archivo de configuración de la base de datos
 include("../config/config.php");
 
-// Nombre del archivo CSV que se va a generar
-$filename = "empleados.csv";
+$fecha_actual = date("Y-m-d");
+$filename = "empleados_" . $fecha_actual . ".csv";
 
 // Encabezados para el archivo CSV
 $fields = array('ID', 'Nombre', 'Edad', 'Cédula', 'Sexo', 'Teléfono', 'Cargo', 'Avatar');
 
 // Consulta SQL para obtener los datos de los empleados
 $sql = "SELECT * FROM tbl_empleados";
-
 // Ejecutar la consulta
 $result = $conexion->query($sql);
 

@@ -29,8 +29,6 @@
                     $id = $_GET['id'];
                     $datoEmpleadoEdit = obtenerDatosEmpleado($conexion, $id);
                 }
-
-
                 include("formulario.php"); ?>
             </div>
             <div class="col-md-8">

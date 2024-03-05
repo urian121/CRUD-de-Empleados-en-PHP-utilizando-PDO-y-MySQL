@@ -1,8 +1,7 @@
 <?php
 if (isset($datoEmpleadoEdit['id'])) { ?>
     <a href="./" class="float-end"><i class="bi bi-arrow-right-circle"></i></a>
-<?php }
-?>
+<?php } ?>
 
 <form action="<?php echo isset($datoEmpleadoEdit['id']) ? 'acciones/updateEmpleado.php' : 'acciones/acciones.php'; ?>" method="POST" enctype="multipart/form-data">
     <?php if (isset($datoEmpleadoEdit['id'])) { ?>

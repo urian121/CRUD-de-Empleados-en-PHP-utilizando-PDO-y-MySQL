@@ -1,6 +1,8 @@
 <?php
+/*
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
+*/
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -34,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$nombre', '$edad', '$cedula', '$sexo', '$telefono', '$cargo', '$nombreArchivo')";
 
             if ($conexion->query($sql) === TRUE) {
-                header("location:../?successUC=1");
+                header("location:../");
             } else {
                 echo "Error al crear el registro: " . $conexion->error;
             }
@@ -46,7 +48,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-
+/**
+ * Función para obtener todos los empleados 
+ */
 
 function obtenerEmpleados($conexion)
 {
@@ -59,7 +63,9 @@ function obtenerEmpleados($conexion)
 }
 
 
-
+/**
+ * Función para obtener un solo empleado de acuerdo al ID
+ */
 function obtenerDatosEmpleado($conexion, $id)
 {
     $sql = ("SELECT * FROM tbl_empleados WHERE id = $id");
@@ -70,3 +76,19 @@ function obtenerDatosEmpleado($conexion, $id)
     $empleado = $query->fetch_assoc();
     return $empleado;
 }
+
+/**
+ * Función para obtener el total de empleados   
+ */
+/*
+function obtenerTotalEmpleados($conexion)
+{
+    $sql = "SELECT COUNT(*) as total FROM tbl_empleados";
+    $resultado = $conexion->query($sql);
+    if (!$resultado) {
+        return 0;
+    }
+    $fila = $resultado->fetch_assoc();
+    return $fila['total'];
+}
+*/

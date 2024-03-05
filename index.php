@@ -15,21 +15,32 @@
 </head>
 
 <body>
-
+    <?php
+    include("config/config.php");
+    include("acciones/acciones.php");
+    ?>
     <h1 class="text-center mt-5 mb-5 fw-bold">Desarrollo de un Sistema CRUD de Empleados en PHP utilizando PDO y MySQL</h1>
 
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-md-4" style="border-right: 1px solid #dee2e6;">
-                <?php include("formulario.php"); ?>
+                <?php
+                if (isset($_GET['id'])) {
+                    $id = $_GET['id'];
+                    $datoEmpleadoEdit = obtenerDatosEmpleado($conexion, $id);
+                }
+
+
+                include("formulario.php"); ?>
             </div>
             <div class="col-md-8">
                 <h1 class="text-center">lista de empleados
+                    <span class="float-end">
+                        <a href="acciones/exportar.php" class="btn btn-success" title="Exportar a CSV" download="empleados.csv"><i class="bi bi-filetype-csv"></i></a>
+                    </span>
                     <hr>
                 </h1>
                 <?php
-                include("config/config.php");
-                include("acciones/acciones.php");
                 $empleados = obtenerEmpleados($conexion);
                 $totalEmpleados = $empleados->num_rows;
                 echo "Total de empleados: <strong>" . $totalEmpleados . "</strong>";

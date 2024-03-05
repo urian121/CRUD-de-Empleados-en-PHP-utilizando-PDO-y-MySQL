@@ -33,22 +33,22 @@
                     include("config/config.php");
                     include("acciones/acciones.php");
                     $id = $_GET['id'];
-                    $infoReserva = obtenerDatosEmpleado($conexion, $id);
+                    $dataInfo = obtenerDatosEmpleado($conexion, $id);
                 } else {
                     header("location:./");
                 }
                 ?>
 
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Nombre: <strong> <?php echo $infoReserva['nombre']; ?></strong></li>
-                    <li class="list-group-item">Cédula: <strong><?php echo $infoReserva['cedula']; ?></strong></li>
-                    <li class="list-group-item">Edad: <strong><?php echo $infoReserva['edad']; ?></strong></li>
-                    <li class="list-group-item">Sexo: <strong><?php echo $infoReserva['sexo']; ?></strong></li>
-                    <li class="list-group-item">Teléfono: <strong><?php echo $infoReserva['telefono']; ?></strong></li>
-                    <li class="list-group-item">Cargo: <strong><?php echo $infoReserva['cargo']; ?></strong></li>
+                    <li class="list-group-item">Nombre: <strong> <?php echo $dataInfo['nombre']; ?></strong></li>
+                    <li class="list-group-item">Cédula: <strong><?php echo $dataInfo['cedula']; ?></strong></li>
+                    <li class="list-group-item">Edad: <strong><?php echo $dataInfo['edad']; ?></strong></li>
+                    <li class="list-group-item">Sexo: <strong><?php echo $dataInfo['sexo']; ?></strong></li>
+                    <li class="list-group-item">Teléfono: <strong><?php echo $dataInfo['telefono']; ?></strong></li>
+                    <li class="list-group-item">Cargo: <strong><?php echo $dataInfo['cargo']; ?></strong></li>
                     <li class="list-group-item">
                         <strong>Foto de perfil</strong> <br>
-                        <img src="acciones/fotos_empleados/<?php echo $infoReserva['avatar']; ?>" alt='<?php echo $infoReserva['nombre']; ?>' width="100" height="100">
+                        <img src="acciones/fotos_empleados/<?php echo $dataInfo['avatar']; ?>" alt='<?php echo $dataInfo['nombre']; ?>' width="100" height="100">
                     </li>
                 </ul>
             </div>

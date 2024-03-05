@@ -28,11 +28,6 @@ hr {
   width: 100% !important;
   background-color: red;
 }
-.flex_btns {
-  display: flex;
-  justify-content: space-around;
-}
-.flex {
-  display: flex;
-  justify-content: space-between;
+.bi-arrow-right-circle {
+  font-size: 30px;
 }

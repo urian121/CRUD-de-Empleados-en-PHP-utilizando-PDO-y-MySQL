@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     print_r($sql);
 
     if ($conexion->query($sql) === TRUE) {
-        header("location:../?successUC=1");
+        header("location:../");
     } else {
         echo "Error al actualizar el registro: " . $conexion->error;
     }
